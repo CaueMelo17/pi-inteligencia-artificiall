@@ -109,3 +109,15 @@ Estudem as aplicações do modelo para que possam tirar suas dúvidas a partir d
 Bom final de férias e até lá,
 Prof. Marco.
 
+
+# IA
+ - IMPLEMENTADO FUNÇÃO DE TRADUÇÃO DE PAGINA COM IA DO GOOGLE.
+
+# MODO DE USO
+
+1 - INSTALE A BIBLIOTECA "@google-cloud/translate"
+
+2 - VÁ ATÉ GOOGLE CLOUD > CRIE CONTA > CRIE PROJETO > VÁ AO MENU LATERAL ESQUERDO > CLIQUE EM API'S E SERVIÇO > BIBLIOTECA > PESQUISE " Cloud Translation API" > ATIVE > VA AO MENU NOVAMENTE  > CREDENCIAIS > GERE UMA NOVA API
+
+3 - COLE EM server.js: const translate = new Translate({ key:'SUA_CHAVE_API_AQUI'}); , E RODE O PROJETO
+

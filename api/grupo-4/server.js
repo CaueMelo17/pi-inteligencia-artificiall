@@ -5,6 +5,8 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const uniqueValidator = require('mongoose-unique-validator')
+const { Translate } = require('@google-cloud/translate').v2;
+const translate = new Translate({ key:'SUA_CHAVE_API_AQUI'});
 
 const routes = require("./routes/Router")
 
@@ -114,3 +116,14 @@ app.listen(port, () => {
         console.log("Erro", e)
     }
 })
+
+app.post('/translate', async (req, res) => {
+    try {
+        const { text, target } = req.body;
+        const [translation] = await translate.translate(text, target);
+        res.json({ translation });
+    } catch (error) {
+        console.error('Erro na tradução:', error);
+        res.status(500).json({ error: 'Erro ao traduzir' });
+    }
+});
